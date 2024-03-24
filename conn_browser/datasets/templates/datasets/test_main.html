@@ -1,0 +1,38 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'datasets/style.css' %}">
+
+<h1>Connectivity Browser</h1>
+
+<style>
+table {border-collapse: collapse; }
+td {text-align: center; }
+</style>
+
+<img src="{% static 'datasets/images/taxonomy.jpeg' %}"/>
+
+<table border='1'>
+  <tr>
+    <td rowspan="2"><b>List of datasets</b></td>
+    <td colspan="3"><b>Structural Connectivities</b></td>
+    <td colspan="4"><b>Functional Connectivities</b></td>
+  </tr>
+  <tr>
+    <th><img src="{% static 'datasets/images/sc1.png' %}" width="132", height="117"/><br>relational</th>
+    <th><img src="{% static 'datasets/images/sc2.png' %}" width="132", height="117"/><br>layout</th>
+    <th><img src="{% static 'datasets/images/sc3.png' %}" width="132", height="117"/><br>pragmatic</th>
+    <th><img src="{% static 'datasets/images/fc1.png' %}" width="132", height="117"/><br>quantitative</th>
+    <th><img src="{% static 'datasets/images/fc2.png' %}" width="132", height="117"/><br>relational</th>
+    <th><img src="{% static 'datasets/images/fc3.png' %}" width="132", height="117"/><br>mechanistic</th>
+    <th><img src="{% static 'datasets/images/fc4.png' %}" width="132", height="117"/><br>propagation</th>
+  </tr>
+  {% for x in datasets %}
+    <tr>
+      <td> <a href={{x.id}}><img src="{{x.icon.url}}" alt="{{x.name}}" width="132", height="117"> </a><br>
+      {{x.name}}</td>
+      <td>{{x.sc1}}</td>  <td>{{x.sc2}}</td>  <td>{{x.sc3}}</td>
+      <td>{{x.fc1}}</td>  <td>{{x.fc2}}</td>  <td>{{x.fc3}}</td>  <td>{{x.fc4}}</td>
+    </tr>
+  {% endfor %}
+</table>
+
+

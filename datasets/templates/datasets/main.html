@@ -1,0 +1,120 @@
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'datasets/style.css' %}"><! older css >
+<!meta name="viewport" content="width=device-width, initial-scale=1"><! for mobiles>
+
+<div class="container">
+<h1>Connectivity Browser</h1><br>
+
+<style>
+table {border-collapse: collapse; }
+td {text-align: center; }
+</style>
+
+<!img src="{% static 'datasets/images/taxonomy.jpeg' %}"/>
+
+<table border='1'>
+<tr>
+    <td rowspan="2"><b>Datasets</b></td>
+    <td colspan="3" style="text-align: left"><b>Structural Connectivities</b></td>
+    <td colspan="4" style="text-align: left"><b>Functional Connectivities</b></td>
+  </tr>
+  <tr>
+    <th style="text-align: center"><img src="{% static 'datasets/images/sc1.png' %}" width="132", height="117"/><br>relational</th>
+    <th style="text-align: center"><img src="{% static 'datasets/images/sc2.png' %}" width="132", height="117"/><br>layout</th>
+    <th style="text-align: center"><img src="{% static 'datasets/images/sc3.png' %}" width="132", height="117"/><br>pragmatic</th>
+    <th style="text-align: center"><img src="{% static 'datasets/images/fc1.png' %}" width="132", height="117"/><br>quantitative</th>
+    <th style="text-align: center"><img src="{% static 'datasets/images/fc2.png' %}" width="132", height="117"/><br>relational</th>
+    <th style="text-align: center"><img src="{% static 'datasets/images/fc3.png' %}" width="132", height="117"/><br>mechanistic</th>
+    <th style="text-align: center"><img src="{% static 'datasets/images/fc4.png' %}" width="132", height="117"/><br>propagation</th>
+  </tr>
+  {% for x in datasets %}
+    <tr>
+      <td> <a href={{x.slug}}>
+      <img src="{{x.icon.url}}" alt="{{x.name}}" width="132" height="117" title="{{x.name}}" data-bs-toggle="popover">
+      <br></td>
+      
+      <td>{% if x.sc1 != 0 %} 
+      <div class="btn-group">
+      <button type="button" class="unstyled-button" data-bs-toggle="dropdown">
+      <img src="{% static 'datasets/images/green.png' %}" width="132", height="117"> </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">stuff inside</a>
+        </div>
+      </div>
+      {% else %}<img src="{% static 'datasets/images/red.png' %}" width="132", height="117">
+      {% endif %}</td>
+      
+      <td>{% if x.sc2 != 0 %} 
+      <div class="btn-group">
+      <button type="button" class="unstyled-button" data-bs-toggle="dropdown">
+      <img src="{% static 'datasets/images/green.png' %}" width="132", height="117"> </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">stuff inside</a>
+        </div>
+      </div>
+      {% else %}<img src="{% static 'datasets/images/red.png' %}" width="132", height="117">
+      {% endif %}</td>
+      
+      <td>{% if x.sc3 != 0 %} 
+      <div class="btn-group">
+      <button type="button" class="unstyled-button" data-bs-toggle="dropdown">
+      <img src="{% static 'datasets/images/green.png' %}" width="132", height="117"> </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">stuff inside</a>
+        </div>
+      </div>
+      {% else %}<img src="{% static 'datasets/images/red.png' %}" width="132", height="117">
+      {% endif %}</td>
+      
+      <td>{% if x.fc1 != 0 %} 
+      <div class="btn-group">
+      <button type="button" class="unstyled-button" data-bs-toggle="dropdown">
+      <img src="{% static 'datasets/images/green.png' %}" width="132", height="117"> </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">stuff inside</a>
+        </div>
+      </div>
+      {% else %}<img src="{% static 'datasets/images/red.png' %}" width="132", height="117">
+      {% endif %}</td>
+      
+      <td>{% if x.fc2 != 0 %} 
+      <div class="btn-group">
+      <button type="button" class="unstyled-button" data-bs-toggle="dropdown">
+      <img src="{% static 'datasets/images/green.png' %}" width="132", height="117"> </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">stuff inside</a>
+        </div>
+      </div>
+      {% else %}<img src="{% static 'datasets/images/red.png' %}" width="132", height="117">
+      {% endif %}</td>
+      
+      <td>{% if x.fc3 != 0 %} 
+      <div class="btn-group">
+      <button type="button" class="unstyled-button" data-bs-toggle="dropdown">
+      <img src="{% static 'datasets/images/green.png' %}" width="132", height="117"> </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">stuff inside</a>
+        </div>
+      </div>
+      {% else %}<img src="{% static 'datasets/images/red.png' %}" width="132", height="117">
+      {% endif %}</td>
+      
+      <td>{% if x.fc4 != 0 %} 
+      <div class="btn-group">
+      <button type="button" class="unstyled-button" data-bs-toggle="dropdown">
+      <img src="{% static 'datasets/images/green.png' %}" width="132", height="117"> </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">stuff inside</a>
+        </div>
+      </div>
+      {% else %}<img src="{% static 'datasets/images/red.png' %}" width="132", height="117">
+      {% endif %}</td>
+      
+    </tr>
+  {% endfor %}
+</table>
+</div>
+

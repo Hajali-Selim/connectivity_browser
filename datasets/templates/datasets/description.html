@@ -1,0 +1,24 @@
+{% load latexify %}
+
+<h1>{{dataset.name}}: {{dataset.field}}</h1>
+{% if dataset.icon %} <img src={{dataset.icon.url}}/> {% endif %}
+
+<p>Spatial scale: {% latexify dataset.space parse_math=True %}</p>
+<p>Temporal scale: {% latexify dataset.time parse_math=True %}</p>
+
+<p>Structural Connectivities:</p>
+<ul>
+{% if dataset.sc1 != 0 %} <li><p>Number of relational SCs: {{dataset.sc1}}</p></li> {% endif %}
+{% if dataset.sc2 != 0 %} <li><p>Number of layout SCs: {{dataset.sc2}}</p></li> {% endif %}
+<li><p>Number of pragmatic SCs: {{dataset.sc3}}</p></li>
+</ul>
+<p>Functional Connectivities:</p>
+<ul>
+{% if dataset.fc1 != 0 %} <li><p>Number of quantitative FCs: {{dataset.fc1}}</p></li> {% endif %}
+{% if dataset.fc2 != 0 %} <li><p>Number of relational FCs: {{dataset.fc2}}</p></li> {% endif %}
+{% if dataset.fc3 != 0 %} <li><p>Number of mechanistic FCs: {{dataset.fc3}}</p></li> {% endif %}
+<li><p>Number of propagation FCs: {{dataset.fc4}}</p></li>
+</ul>
+
+<p>Check out all our <a href="/conn_browser">datasets</a></p>
+

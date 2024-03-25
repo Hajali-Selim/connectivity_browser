@@ -20,7 +20,8 @@ from django.urls import include, path, re_path
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
-    path("conn_browser/", include("datasets.urls")),
-    path("admin/", admin.site.urls),
-    re_path(r'^favicon\.ico$',RedirectView.as_view(url='/static/favicon.ico')),
+    path("admin", admin.site.urls),
+    path("", include("datasets.urls")),
+    re_path(r'^favicon\.ico$',RedirectView.as_view(url='/static/images/favicon.ico')),
 ]# + staticfiles_urlpatterns(MEDIA_URL) + staticfiles_urlpatterns(STATIC_URL)
+

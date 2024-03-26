@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: conn_browser
+    buildCommand: "./build.sh"
+    env: python3
+    startCommand: "gunicorn conn_browser.wsgi:application"

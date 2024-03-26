@@ -19,9 +19,13 @@ from django.views.generic import RedirectView
 from django.urls import include, path, re_path
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
+
 urlpatterns = [
     path("admin", admin.site.urls),
     path("", include("datasets.urls")),
     re_path(r'^favicon\.ico$',RedirectView.as_view(url='/static/images/favicon.ico')),
-]# + staticfiles_urlpatterns(MEDIA_URL) + staticfiles_urlpatterns(STATIC_URL)
+] + staticfiles_urlpatterns()
+
+#if settings.DEBUG:
+#    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

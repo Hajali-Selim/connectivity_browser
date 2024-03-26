@@ -21,14 +21,14 @@ MEDIA_URL = ''
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-#SECRET_KEY = os.environ.get("SECRET_KEY")
-SECRET_KEY = "django-insecure-&dgfbci*wh8_%#3u9z(*uixn_x!awm^8y!v0$8%_nse)j7eh1!"
+SECRET_KEY = os.environ.get("SECRET_KEY")
+#SECRET_KEY = "django-insecure-&dgfbci*wh8_%#3u9z(*uixn_x!awm^8y!v0$8%_nse)j7eh1!"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-#DEBUG = os.environ.get("DEBUG", "False").lower() == "True"
-#ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
-DEBUG = True
-ALLOWED_HOSTS = ['*']
+DEBUG = os.environ.get("DEBUG", "False").lower() == "True"
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
+#DEBUG = True
+#ALLOWED_HOSTS = ['*']
 
 # Application definition
 APPEND_SLASH = False

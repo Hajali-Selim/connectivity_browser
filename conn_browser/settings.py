@@ -30,8 +30,8 @@ ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
 #DEBUG = True
 #ALLOWED_HOSTS = ['*']
 
+APPEND_SLASH = True
 # Application definition
-APPEND_SLASH = False
 INSTALLED_APPS = [
     "datasets.apps.DatasetsConfig",
     "django.contrib.admin",
@@ -116,23 +116,15 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
 LANGUAGE_CODE = "en-us"
-#TIME_ZONE = "CET"
-
 USE_I18N = True
 USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = "static"
-STATIC_ROOT = "staticfiles"#os.path.join(BASE_DIR, 'staticfiles')
-
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-#STORAGES = {"staticfiles": { "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",}, }
-
-#STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
-#STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
-
+STATIC_URL = "static/"
+#STATIC_ROOT = "staticfiles"#os.path.join(BASE_DIR, 'staticfiles')
+#STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

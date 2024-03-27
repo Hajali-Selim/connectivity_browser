@@ -1,4 +1,6 @@
 {% load latexify %}
+{% load static %}
+<link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
 
 <h1>{{dataset.name}}: {{dataset.field}}</h1>
 {% if dataset.icon %} <img src={{dataset.icon.url}}/> {% endif %}

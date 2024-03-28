@@ -16,14 +16,8 @@ class Dataset(models.Model):
 class Structural(models.Model):
     dataset = models.ForeignKey(Dataset, on_delete=models.CASCADE)
     sc1_matrix, sc2_matrix, sc3_matrix = models.ImageField('Relational SC matrices', blank=True, upload_to='datasets/static/images/matrices/sc1'), models.ImageField('Layout SC matrices', blank=True, upload_to='datasets/static/images/matrices/sc2'), models.ImageField('Pragmatic SC matrices', blank=True, upload_to='datasets/static/images/matrices/sc3')
-    #slug = models.SlugField(default="", null=False)
-    def __str__(self):
-        return f'{self.name}'
 
 class Functional(models.Model):
     dataset = models.ForeignKey(Dataset, on_delete=models.CASCADE)
     fc1_matrix, fc2_matrix, fc3_matrix, fc4_matrix = models.ImageField('Quantitative FC matrices', blank=True, upload_to='datasets/static/images/matrices/fc1'), models.ImageField('Relational FC matrices', blank=True, upload_to='datasets/static/images/matrices/fc2'), models.ImageField('Mechanistic FC matrices', blank=True, upload_to='datasets/static/images/matrices/fc3'), models.ImageField('Propagation FC matrices', blank=True, upload_to='datasets/static/images/matrices/fc4')
-    #slug = models.SlugField(default="", null=False)
-    def __str__(self):
-        return f'{self.name}'
 

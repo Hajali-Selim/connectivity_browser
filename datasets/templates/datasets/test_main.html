@@ -124,4 +124,18 @@ td {text-align: center; }
 SC-FC comparisons column
 </div>
 
+/* TO INSERT BUTTON THAT DISPLAYS IMG ON CLICK */
+<img src="{% static 'images/icons/red.png' %}" width="88", height="78", style="display:none;", id="hidden-img">
+  <button type="button" onclick="show()" id="btnID">Show Image</button>
+  <script>
+function show() {
+  /* Access image by id and change the display property to block*/
+  document.getElementById('hidden-img')
+    .style.display = "block";
+  document.getElementById('btnID')
+    .style.display = "none"; }
+  </script>
+</div>
+
+
 </div>

@@ -14,24 +14,38 @@ import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-MEDIA_ROOT = ''
-MEDIA_URL = ''
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get("SECRET_KEY")
-#SECRET_KEY = "django-insecure-&dgfbci*wh8_%#3u9z(*uixn_x!awm^8y!v0$8%_nse)j7eh1!"
+
+deployment = True
+
+if deployment:
+    SECRET_KEY = os.environ.get("SECRET_KEY")
+    DEBUG = os.environ.get("DEBUG", "False").lower() == "True"
+    ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
+    STATIC_ROOT = "staticfiles"#os.path.join(BASE_DIR, 'staticfiles')
+    STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+    database_url = os.environ.get("DATABASE_URL")
+    DATABASES = {"default": dj_database_url.config(), }
+else:
+    SECRET_KEY = "django-insecure-&dgfbci*wh8_%#3u9z(*uixn_x!awm^8y!v0$8%_nse)j7eh1!"
+    DEBUG = True
+    ALLOWED_HOSTS = ['*']
+    DATABASES = {"default": {"ENGINE": "django.db.backends.sqlite3",
+                             "NAME": BASE_DIR / "db.sqlite3", }}
+
+MEDIA_ROOT = os.path.join(BASE_DIR, '')
+MEDIA_URL = os.path.join(BASE_DIR, '')
+
+
+#"ENGINE": "django.db.backends.postgresql", "OPTIONS": {"service":"my_service", "passfile":".my_pgpass",},}}
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get("DEBUG", "False").lower() == "True"
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
-#DEBUG = True
-#ALLOWED_HOSTS = ['*']
 
 # Application definition
-APPEND_SLASH = True
 INSTALLED_APPS = [
     "datasets.apps.DatasetsConfig",
     "django.contrib.admin",
@@ -80,18 +94,6 @@ WSGI_APPLICATION = "conn_browser.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-#DATABASES = {
-#    "default": {
-#        "ENGINE": "django.db.backends.sqlite3",
-#        "NAME": BASE_DIR / "db.sqlite3",        
-#    }}
-
-database_url = os.environ.get("DATABASE_URL")
-DATABASES = {
-    "default": dj_database_url.config(),
-    }
-
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -123,8 +125,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = "static/"
-STATIC_ROOT = "staticfiles"#os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

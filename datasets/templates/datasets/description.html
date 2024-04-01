@@ -10,17 +10,20 @@
 
 <p>Structural Connectivities:</p>
 <ul>
-{% if dataset.sc1 != 0 %} <li><p>Number of relational SCs: {{dataset.sc1}}</p></li> {% endif %}
-{% if dataset.sc2 != 0 %} <li><p>Number of layout SCs: {{dataset.sc2}}</p></li> {% endif %}
-<li><p>Number of pragmatic SCs: {{dataset.sc3}}</p></li>
+{% if dataset.nb_sc1 %} <li><p>Number of relational SCs: {{dataset.sc1}}</p></li> {% endif %}
+{% if dataset.nb_sc2 %} <li><p>Number of layout SCs: {{dataset.sc2}}</p></li> {% endif %}
+{% if dataset.nb_sc3 %} <li><p>Number of pragmatic SCs: {{dataset.nb_sc3}}</p></li> {% endif %}
 </ul>
 <p>Functional Connectivities:</p>
 <ul>
-{% if dataset.fc1 != 0 %} <li><p>Number of quantitative FCs: {{dataset.fc1}}</p></li> {% endif %}
-{% if dataset.fc2 != 0 %} <li><p>Number of relational FCs: {{dataset.fc2}}</p></li> {% endif %}
-{% if dataset.fc3 != 0 %} <li><p>Number of mechanistic FCs: {{dataset.fc3}}</p></li> {% endif %}
-<li><p>Number of propagation FCs: {{dataset.fc4}}</p></li>
+{% if dataset.nb_fc1 %} <li><p>Number of quantitative FCs: {{dataset.fc1}}</p></li> {% endif %}
+{% if dataset.nb_fc2 %} <li><p>Number of relational FCs: {{dataset.fc2}}</p></li> {% endif %}
+{% if dataset.nb_fc3 %} <li><p>Number of mechanistic FCs: {{dataset.fc3}}</p></li> {% endif %}
+{% if dataset.nb_fc4 %} <li><p>Number of propagation FCs: {{dataset.fc4}}</p></li> {% endif %}
 </ul>
+
+<img src={{dataset.sc1}}/>
+<!img src="{% static 'images/matrices/sc1/Yanhua_layout_gamma07.png' %}">
 
 <p>Check out all our <a href="/">datasets</a></p>
 

@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-deployment = False
+deployment = True
 
 if deployment:
     SECRET_KEY = os.environ.get("SECRET_KEY")

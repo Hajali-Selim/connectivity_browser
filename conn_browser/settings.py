@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-deployment = True
+deployment = False
 
 if deployment:
     SECRET_KEY = os.environ.get("SECRET_KEY")
@@ -36,6 +36,9 @@ else:
     ALLOWED_HOSTS = ['*']
     DATABASES = {"default": {"ENGINE": "django.db.backends.sqlite3",
                              "NAME": BASE_DIR / "db.sqlite3", }}
+
+STATIC_ROOT = "staticfiles"#os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 MEDIA_ROOT = os.path.join(BASE_DIR, '')
 MEDIA_URL = os.path.join(BASE_DIR, '')

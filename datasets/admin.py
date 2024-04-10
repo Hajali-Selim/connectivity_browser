@@ -5,5 +5,5 @@ from .models import Dataset
 @admin.register(Dataset)
 class DatasetAdmin(admin.ModelAdmin):
     readonly_fields = ('id',)
-    prepopulated_fields = {"slug": "name")}
+    prepopulated_fields = {"slug": "name"}
 

@@ -4,6 +4,6 @@ from .models import Dataset
 
 @admin.register(Dataset)
 class DatasetAdmin(admin.ModelAdmin):
-    readonly_fields = ('id',)
-    prepopulated_fields = {"slug": "name"}
+    #readonly_fields = ('id',)
+    prepopulated_fields = {"slug": ["name",]}
 

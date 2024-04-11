@@ -27,7 +27,8 @@ if deployment:
     DEBUG = os.environ.get("DEBUG", "False").lower() == "True"
     ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
     STATIC_ROOT = "staticfiles"#os.path.join(BASE_DIR, 'staticfiles')
-    STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+    #STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+    STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
     database_url = os.environ.get("DATABASE_URL")
     DATABASES = {"default": dj_database_url.config(), }
 else:

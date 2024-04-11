@@ -22,12 +22,8 @@ from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
-    #path("admin", admin.site.urls),
     path("admin/", admin.site.urls),
     path("", include("datasets.urls")),
     re_path(r'^favicon\.ico$', RedirectView.as_view(url='/static/images/favicon.ico')),
-]# + staticfiles_urlpatterns()
-
-#if settings.DEBUG:
-#    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]
 

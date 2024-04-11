@@ -16,6 +16,6 @@ def description(request, slug):
     return render(request, 'datasets/description.html', context)
 
 def testing_page(request):
-    return HttpResponse("Successful test."# % id)
+    return HttpResponse("Successful test.")# % id)
 
 

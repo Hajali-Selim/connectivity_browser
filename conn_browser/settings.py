@@ -42,7 +42,7 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 MEDIA_ROOT = os.path.join(BASE_DIR, '')
 MEDIA_URL = os.path.join(BASE_DIR, '')
-
+SERVER_EMAIL = 'selimhajali@gmail.com'
 
 #"ENGINE": "django.db.backends.postgresql", "OPTIONS": {"service":"my_service", "passfile":".my_pgpass",},}}
 

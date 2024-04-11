@@ -77,7 +77,6 @@ ROOT_URLCONF = "conn_browser.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        #"DIRS": [os.path.join(BASE_DIR, 'datasets/templates/datasets/')],
         "DIRS": [],
         "APP_DIRS": True,
         "OPTIONS": {

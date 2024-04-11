@@ -19,5 +19,5 @@ def testing_page(request):
     #return HttpResponse("Successful test.")# % id)
     datasets = Dataset.objects.all()
     context = {'datasets':datasets}
-    return render(request, 'test_main.html', context)
+    return render(request, 'datasets/test_main.html', context)
 

@@ -42,8 +42,6 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 MEDIA_ROOT = os.path.join(BASE_DIR, '')
 MEDIA_URL = os.path.join(BASE_DIR, '')
-import sentry_sdk
-sentry_sdk.init(dsn="https://connectivity-browser.onrender.com", enable_tracing=True, )
 
 #"ENGINE": "django.db.backends.postgresql", "OPTIONS": {"service":"my_service", "passfile":".my_pgpass",},}}
 
@@ -79,6 +77,7 @@ ROOT_URLCONF = "conn_browser.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
+        #"DIRS": [os.path.join(BASE_DIR, 'datasets/templates/datasets/')],
         "DIRS": [],
         "APP_DIRS": True,
         "OPTIONS": {

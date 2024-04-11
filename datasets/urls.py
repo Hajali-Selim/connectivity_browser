@@ -8,5 +8,5 @@ app_name = 'datasets'
 urlpatterns = [
     path('', views.main, name='main'),
     path('<slug:slug>', views.description, name='description'),
-    #path('<int:id>', views.description, name='description'),
+    path('test/', views.testing_page, name='testing_page'),
 ] + staticfiles_urlpatterns() + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

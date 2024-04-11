@@ -1,6 +1,6 @@
-<!{% load bootstrap5 %}>
-<!{% bootstrap_css %}>
-<!{% bootstrap_javascript %}>
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
 {% load static %}
 <!link rel="stylesheet" type="text/css" href="{% static 'style.css' %}"><! older css >
 <!meta name="viewport" content="width=device-width, initial-scale=1"><! for mobiles>
@@ -31,13 +31,13 @@ td {text-align: center; }
   {% for x in datasets %}
     <tr>
       <td> <a href={{x.slug}}>
-      <!img src="{{x.icon.url}}" alt="{{x.name}}" width="88" height="78" title="{{x.name}}" data-bs-toggle="popover">
+      <img src="{{x.icon.url}}" alt="{{x.name}}" width="88" height="78" title="{{x.name}}" data-bs-toggle="popover">
       <br></td>
       
       <td>{% if x.sc1 %}
       <div class="btn-group">
-      <!button type="button" class="unstyled-button" data-bs-toggle="dropdown">
-      <!img src="{% static 'images/green.png' %}" width="77", height="74"> <!/button>
+      <button type="button" class="unstyled-button" data-bs-toggle="dropdown">
+      <img src="{% static 'images/green.png' %}" width="77", height="74"> </button>
         <div class="dropdown-menu">
           <a class="dropdown-item" href="#"><img src="{{x.sc1.url}}" alt="not included yet" max-width=40%></a>
         </div>
@@ -47,8 +47,8 @@ td {text-align: center; }
       
       <td>{% if x.sc2 %}
       <div class="btn-group">
-      <!button type="button" class="unstyled-button" data-bs-toggle="dropdown">
-      <!img src="{% static 'images/green.png' %}" width="77", height="74"> <!/button>
+      <button type="button" class="unstyled-button" data-bs-toggle="dropdown">
+      <img src="{% static 'images/green.png' %}" width="77", height="74"> </button>
         <div class="dropdown-menu">
           <a class="dropdown-item" href="#"><img src="{{x.sc2.url}}" alt="not included yet"></a>
         </div>
@@ -58,8 +58,8 @@ td {text-align: center; }
       
       <td>{% if x.sc3 %}
       <div class="btn-group">
-      <!button type="button" class="unstyled-button" data-bs-toggle="dropdown">
-      <!img src="{% static 'images/green.png' %}" width="77", height="74"> <!/button>
+      <button type="button" class="unstyled-button" data-bs-toggle="dropdown">
+      <img src="{% static 'images/green.png' %}" width="77", height="74"> </button>
         <div class="dropdown-menu">
           <a class="dropdown-item" href="#"><img src="{{x.sc3.url}}" alt="not included yet"></a>
         </div>
@@ -69,8 +69,8 @@ td {text-align: center; }
       
       <td>{% if x.fc1 %} 
       <div class="btn-group">
-      <!button type="button" class="unstyled-button" data-bs-toggle="dropdown">
-      <!img src="{% static 'images/green.png' %}" width="77", height="74"> <!/button>
+      <button type="button" class="unstyled-button" data-bs-toggle="dropdown">
+      <img src="{% static 'images/green.png' %}" width="77", height="74"> </button>
         <div class="dropdown-menu">
           <a class="dropdown-item" href="#"><img src="{{x.fc1.url}}" alt="not included yet"></a>
         </div>
@@ -80,8 +80,8 @@ td {text-align: center; }
       
       <td>{% if x.fc2 %} 
       <div class="btn-group">
-      <!button type="button" class="unstyled-button" data-bs-toggle="dropdown">
-      <!img src="{% static 'images/green.png' %}" width="77", height="74"> <!/button>
+      <button type="button" class="unstyled-button" data-bs-toggle="dropdown">
+      <img src="{% static 'images/green.png' %}" width="77", height="74"> </button>
         <div class="dropdown-menu">
           <a class="dropdown-item" href="#"><img src="{{x.fc2.url}}" alt="not included yet"></a>
         </div>
@@ -91,8 +91,8 @@ td {text-align: center; }
       
       <td>{% if x.fc3 %} 
       <div class="btn-group">
-      <!button type="button" class="unstyled-button" data-bs-toggle="dropdown">
-      <!img src="{% static 'images/green.png' %}" width="77", height="74"> <!!/button>
+      <button type="button" class="unstyled-button" data-bs-toggle="dropdown">
+      <img src="{% static 'images/green.png' %}" width="77", height="74"> </button>
         <div class="dropdown-menu">
           <a class="dropdown-item" href="#"><img src="{{x.fc3.url}}" alt="not included yet"></a>
         </div>
@@ -102,8 +102,8 @@ td {text-align: center; }
       
       <td>{% if x.fc4 %}
       <div class="btn-group">
-      <!button type="button" class="unstyled-button" data-bs-toggle="dropdown">
-      <!img src="{% static 'images/green.png' %}" width="77", height="74"> <!/button>
+      <button type="button" class="unstyled-button" data-bs-toggle="dropdown">
+      <img src="{% static 'images/green.png' %}" width="77", height="74"> </button>
         <div class="dropdown-menu">
           <a class="dropdown-item" href="#"><img src="{{x.fc4.url}}" alt="not included yet"></a>
         </div>

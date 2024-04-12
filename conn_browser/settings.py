@@ -32,6 +32,7 @@ if deployment:
     STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
     database_url = os.environ.get("DATABASE_URL")
     DATABASES = {"default": dj_database_url.config(), }
+    STATICFILES_DIRS = [BASE_DIR / 'static', ]
 else:
     SECRET_KEY = "django-insecure-&dgfbci*wh8_%#3u9z(*uixn_x!awm^8y!v0$8%_nse)j7eh1!"
     DEBUG = True

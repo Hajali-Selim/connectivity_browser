@@ -42,8 +42,8 @@ else:
 
 DEBUG_PROPAGATE_EXCEPTIONS = True
 
-MEDIA_ROOT = os.path.join(BASE_DIR, '')
-MEDIA_URL = os.path.join(BASE_DIR, '')
+MEDIA_ROOT = ''#os.path.join(BASE_DIR, '')
+MEDIA_URL = ''#os.path.join(BASE_DIR, '')
 
 #"ENGINE": "django.db.backends.postgresql", "OPTIONS": {"service":"my_service", "passfile":".my_pgpass",},}}
 

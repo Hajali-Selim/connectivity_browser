@@ -20,13 +20,13 @@ td {text-align: center; }
     <td colspan="4" style="text-align: left"><b>Functional Connectivities</b></td>
   </tr>
   <tr>
-    <th style="text-align: center"><img src="{% static 'images/sc1.png' %}" width="88", height="78"/><br>relational</th>
-    <th style="text-align: center"><img src="{% static 'images/sc2.png' %}" width="88", height="78"/><br>layout</th>
-    <th style="text-align: center"><img src="{% static 'images/sc3.png' %}" width="88", height="78"/><br>pragmatic</th>
+    <th style="text-align: center"><img src="{% static 'sc1.png' %}" width="88", height="78"/><br>relational</th>
+    <th style="text-align: center"><img src="{% static 'sc2.png' %}" width="88", height="78"/><br>layout</th>
+    <th style="text-align: center"><img src="{% static 'sc3.png' %}" width="88", height="78"/><br>pragmatic</th>
     <th style="text-align: center"><!img src="{% static 'images/fc1.png' %}" width="88", height="78"/><br>quantitative</th>
     <th style="text-align: center"><!img src="{% static 'images/fc2.png' %}" width="88", height="78"/><br>qualitative</th>
-    <th style="text-align: center"><img src="{% static 'images/fc3.png' %}" width="88", height="78"/><br>mechanistic</th>
-    <th style="text-align: center"><img src="{% static 'images/fc4.png' %}" width="88", height="78"/><br>propagation</th>
+    <th style="text-align: center"><img src="{% static 'fc3.png' %}" width="88", height="78"/><br>mechanistic</th>
+    <th style="text-align: center"><img src="{% static 'fc4.png' %}" width="88", height="78"/><br>propagation</th>
   </tr>
   {% for x in datasets %}
     <tr>
@@ -37,78 +37,78 @@ td {text-align: center; }
       <td>{% if x.sc1 %}
       <div class="btn-group">
       <button type="button" class="unstyled-button" data-bs-toggle="dropdown">
-      <img src="{% static 'images/green.png' %}" width="77", height="74"> </button>
+      <img src="{% static 'green.png' %}" width="77", height="74"> </button>
         <div class="dropdown-menu">
           <a class="dropdown-item" href="#"><img src="{{x.sc1.url}}" alt="not included yet" max-width=40%></a>
         </div>
       </div>
-      {% else %}<img src="{% static 'images/red.png' %}" width="88", height="78">
+      {% else %}<img src="{% static 'red.png' %}" width="88", height="78">
       {% endif %}</td>
       
       <td>{% if x.sc2 %}
       <div class="btn-group">
       <button type="button" class="unstyled-button" data-bs-toggle="dropdown">
-      <img src="{% static 'images/green.png' %}" width="77", height="74"> </button>
+      <img src="{% static 'green.png' %}" width="77", height="74"> </button>
         <div class="dropdown-menu">
           <a class="dropdown-item" href="#"><img src="{{x.sc2.url}}" alt="not included yet"></a>
         </div>
       </div>
-      {% else %}<img src="{% static 'images/red.png' %}" width="88", height="78">
+      {% else %}<img src="{% static 'red.png' %}" width="88", height="78">
       {% endif %}</td>
       
       <td>{% if x.sc3 %}
       <div class="btn-group">
       <button type="button" class="unstyled-button" data-bs-toggle="dropdown">
-      <img src="{% static 'images/green.png' %}" width="77", height="74"> </button>
+      <img src="{% static 'green.png' %}" width="77", height="74"> </button>
         <div class="dropdown-menu">
           <a class="dropdown-item" href="#"><img src="{{x.sc3.url}}" alt="not included yet"></a>
         </div>
       </div>
-      {% else %}<img src="{% static 'images/red.png' %}" width="88", height="78">
+      {% else %}<img src="{% static 'red.png' %}" width="88", height="78">
       {% endif %}</td>
       
       <td>{% if x.fc1 %} 
       <div class="btn-group">
       <button type="button" class="unstyled-button" data-bs-toggle="dropdown">
-      <img src="{% static 'images/green.png' %}" width="77", height="74"> </button>
+      <img src="{% static 'green.png' %}" width="77", height="74"> </button>
         <div class="dropdown-menu">
           <a class="dropdown-item" href="#"><img src="{{x.fc1.url}}" alt="not included yet"></a>
         </div>
       </div>
-      {% else %}<img src="{% static 'images/red.png' %}" width="88", height="78">
+      {% else %}<img src="{% static 'red.png' %}" width="88", height="78">
       {% endif %}</td>
       
       <td>{% if x.fc2 %} 
       <div class="btn-group">
       <button type="button" class="unstyled-button" data-bs-toggle="dropdown">
-      <img src="{% static 'images/green.png' %}" width="77", height="74"> </button>
+      <img src="{% static 'green.png' %}" width="77", height="74"> </button>
         <div class="dropdown-menu">
           <a class="dropdown-item" href="#"><img src="{{x.fc2.url}}" alt="not included yet"></a>
         </div>
       </div>
-      {% else %}<img src="{% static 'images/red.png' %}" width="88", height="78">
+      {% else %}<img src="{% static 'red.png' %}" width="88", height="78">
       {% endif %}</td>
       
       <td>{% if x.fc3 %} 
       <div class="btn-group">
       <button type="button" class="unstyled-button" data-bs-toggle="dropdown">
-      <img src="{% static 'images/green.png' %}" width="77", height="74"> </button>
+      <img src="{% static 'green.png' %}" width="77", height="74"> </button>
         <div class="dropdown-menu">
           <a class="dropdown-item" href="#"><img src="{{x.fc3.url}}" alt="not included yet"></a>
         </div>
       </div>
-      {% else %}<img src="{% static 'images/red.png' %}" width="88", height="78">
+      {% else %}<img src="{% static 'red.png' %}" width="88", height="78">
       {% endif %}</td>
       
       <td>{% if x.fc4 %}
       <div class="btn-group">
       <button type="button" class="unstyled-button" data-bs-toggle="dropdown">
-      <img src="{% static 'images/green.png' %}" width="77", height="74"> </button>
+      <img src="{% static 'green.png' %}" width="77", height="74"> </button>
         <div class="dropdown-menu">
           <a class="dropdown-item" href="#"><img src="{{x.fc4.url}}" alt="not included yet"></a>
         </div>
       </div>
-      {% else %}<img src="{% static 'images/red.png' %}" width="88", height="78">
+      {% else %}<img src="{% static 'red.png' %}" width="88", height="78">
       {% endif %}</td>
       
     </tr>

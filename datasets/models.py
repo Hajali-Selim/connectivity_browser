@@ -8,7 +8,7 @@ class Dataset(models.Model):
     space, time = models.CharField('Spatial scale', max_length=255, null=True), models.CharField('Temporal scale', max_length=255, null=True)
     icon = models.ImageField('Icon', blank=True, upload_to=image_folder)
     sc1, sc2, sc3 = models.ImageField('Relational SC', null=True, blank=True,  upload_to=image_folder), models.ImageField('Layout SC', null=True, blank=True,  upload_to=image_folder), models.ImageField('Pragmatic SC', null=True, blank=True,  upload_to=image_folder)
-    fc1, fc2, fc3, fc4 = models.ImageField('Quantitative FC', null=True, upload_to=image_folder), models.ImageField('Qualitative FC', null=True, blank=True,  upload_to=image_folder), models.ImageField('Mechanistic FC', null=True, blank=True,  upload_to=image_folder), models.ImageField('Propagation FC', null=True, blank=True, upload_to=image_folder)
+    fc1, fc2, fc3, fc4 = models.ImageField('Quantitative FC', null=True, blank=True, upload_to=image_folder), models.ImageField('Qualitative FC', null=True, blank=True,  upload_to=image_folder), models.ImageField('Mechanistic FC', null=True, blank=True,  upload_to=image_folder), models.ImageField('Propagation FC', null=True, blank=True, upload_to=image_folder)
     slug = models.SlugField(default="", null=False)
     def __str__(self):
         return f'{self.name}'

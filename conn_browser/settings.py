@@ -26,13 +26,13 @@ if deployment:
     SECRET_KEY = os.environ.get("SECRET_KEY")
     DEBUG = os.environ.get("DEBUG", "False").lower() == "True"
     ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
-    STATIC_ROOT = BASE_DIR / "staticfiles"
+    STATIC_ROOT = "staticfiles"
     #STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
     #STATICFILES_STORAGE = "django.contrib.staticfiles.storage.ManifestStaticFilesStorage"
     STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
     database_url = os.environ.get("DATABASE_URL")
     DATABASES = {"default": dj_database_url.config(), }
-    STATICFILES_DIRS = [BASE_DIR / 'staticfiles', ]
+    STATICFILES_DIRS = [BASE_DIR / 'staticfiles', 'datasets/static/']
 else:
     SECRET_KEY = "django-insecure-&dgfbci*wh8_%#3u9z(*uixn_x!awm^8y!v0$8%_nse)j7eh1!"
     DEBUG = True
